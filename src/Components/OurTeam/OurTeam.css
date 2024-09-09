@@ -1,0 +1,27 @@
+.custom-arrow {
+    display: block;
+    background: rgb(255, 255, 255); /* Default background color */
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    color: rgb(0, 0, 0);
+  }
+  
+  .custom-next-arrow {
+    right: -35px; /* Adjust the position as needed */
+  }
+  
+  .custom-prev-arrow {
+    left: -35px; /* Adjust the position as needed */
+  }
+  
+  .custom-arrow::before {
+    font-size: 20px;
+    color: rgb(21, 33, 44); /* Arrow color */
+  }
+  
+  .custom-arrow:hover {
+    background: #ffffff; /* Hover background color */
+  }
+  
