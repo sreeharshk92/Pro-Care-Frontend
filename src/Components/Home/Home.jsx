@@ -6,13 +6,23 @@ function Home() {
   return (
     <>
     <Navbar/>
-    <div className='bg-home-pic bg-center bg-cover h-[42.5rem] flex flex-col justify-center items-center'>
-      <h1 className='text-shadow text-6xl text-white w-[55rem] text-center font-bold'>"Easy way to keep your home and office in perfect shape."</h1>
-      <div className='flex gap-10 mt-6'>
-      <input type="text" placeholder='🧤Search for a service' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
-      <input type="text" placeholder='📍Search by location' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
-      </div>  
+
+    <div className='flex h-[42.5rem] p-[5.2rem] bg-[#16325B]'>
+  {/* Left Side */}
+  <div className='flex-1 flex flex-col justify-center pl-10'>
+    <h1 className='text-shadow text-6xl text-white w-[35rem] text-left font-bold'>Easy way to keep your home and office in perfect shape.</h1>
+    <div className='flex flex-col gap-4 w-[20rem] mt-6'>
+      <input type="text" placeholder='🧤Search for a service' className='py-2 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      <input type="text" placeholder='📍Search by location' className='py-2 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
     </div>
+  </div>
+
+  {/* Right Side */}
+  <div className='flex-1 bg-home-pic bg-center bg-cover h-[28rem]'>
+    {/* This is where your background image will be displayed */}
+  </div>
+</div>
+
 
     <section className="container mx-auto py-12 px-6">
         <h2 className="text-3xl font-semibold text-center mb-8">Popular Services</h2>
@@ -98,3 +108,68 @@ function Home() {
 }
 
 export default Home
+
+
+
+/*
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+
+   <div className='bg-home-pic bg-center bg-cover h-[42.5rem] flex flex-col justify-center items-center'>
+      <h1 className='text-shadow text-6xl text-white w-[55rem] text-center font-bold'>"Easy way to keep your home and office in perfect shape."</h1>
+      <div className='flex gap-10 mt-6'>
+      <input type="text" placeholder='🧤Search for a service' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      <input type="text" placeholder='📍Search by location' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      </div>  
+    </div>
+
+*/

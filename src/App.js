@@ -17,6 +17,7 @@ import AddressPage from "./Components/Services/Cleaning/SinglePages/BookingSumme
 
 import Adminhome from "./Components/Adminrole/Adminhome";
 import AdminUsers from "./Components/Adminrole/Users/AdminUsers";
+import AddUser from "./Components/Adminrole/Users/AddUser";
 import ServicesList from "./Components/Adminrole/Services/ServicesList";
 import AddService from "./Components/Adminrole/Services/AddService";
 
@@ -59,6 +60,7 @@ function App() {
 
     <Route path="/adminhome" element={<Adminhome/>}></Route>
     <Route path="/adminUsers" element={<AdminUsers/>}></Route>
+    <Route path="/adduser" element={<AddUser/>}></Route>
     <Route path="/servicesList" element={<ServicesList/>}></Route>
     <Route path="/addService" element={<AddService/>}></Route>
     <Route path="/adminbookinglist" element={<AdminBookingList/>}></Route>

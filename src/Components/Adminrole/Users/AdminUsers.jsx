@@ -3,6 +3,7 @@ import Adminsidebar from '../Adminsidebar';
 import Adminheader from '../Adminheader';
 import { IoSearch } from 'react-icons/io5';
 import { MdDelete } from "react-icons/md";
+import { Link } from 'react-router-dom';
 function AdminUsers() {
 
     const [data, setData] = useState([]);
@@ -50,26 +51,29 @@ function AdminUsers() {
                         <section className='flex justify-between'>
 
                        
-                        <div className="text-xl font-bold mb-3">Users</div>
+                        <h1 className="text-xl font-bold mb-3">Users</h1>
 
 
-                        <div className='w-[20rem] mb-4 flex'>
-                <input
-                  type="search"
-                  placeholder='Search for a user. . .'
-                  onChange={(e) => searchUser(e.target.value)}
-                  className='placeholder:text-[#667894] text-black font-medium bg-transparent w-full px-[1rem] py-[.7rem] border-1 border-[#686464] rounded-r-none rounded-l-md'
-                />
+                <div className='w-[20rem] mb-4 flex'>
+
+                <input type="search" placeholder='Search for a user. . .' onChange={(e) => searchUser(e.target.value)} className='placeholder:text-[#667894] text-black font-medium bg-transparent w-full px-[1rem] py-[.5rem] border-1 border-[#686464] rounded-r-none rounded-l-md'/>
+                <section className='flex gap-2'>
+
+                
                 <div className='flex items-center justify-center rounded-r-md rounded-l-none w-[3.5rem] cursor-pointer bg-slate-800 hover:bg-slate-700'>
                   <IoSearch className=' text-white text-[1.6rem]' />
+                
                 </div>
+                
+                <Link to='/adduser'><button className='border rounded-md px-3 py-2 bg-gray-800 text-white hover:bg-slate-700' type='submit'>Add</button></Link>
+                
+                </section>
               </div>
 
               </section>
 
+
                         
-
-
 
 
 

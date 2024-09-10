@@ -25,13 +25,14 @@ function Navbar() {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+
     const toggleNotification = () => {
         setOpen(!open);
     };
 
 
     return (
-        <nav className='h-24 antialiased sticky top-0 z-50  bg-white shadow-xl '>
+        <nav className='h-24 antialiased sticky top-0 z-50   bg-[#78B7D0] shadow-xl '>
 
             <div className='flex justify-between text-sm font-medium py-3 px-32'>
                 <img src={logo} alt="logo" className='w-44' />
@@ -87,8 +88,8 @@ function Navbar() {
             </div>
 
             {open && (
-                        <div className="origin-top-right absolute min-h-screen right-0 w-[28rem] top-0 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="horizontal" aria-labelledby="options-menu">
-                            <div className="py-1" role="none">
+                        <div className="origin-top-right absolute min-h-screen right-0 w-[28rem] top-0  shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="horizontal" aria-labelledby="options-menu">
+                            <div className="p-3" role="none">
                                 <Notifications/>
                             </div>
                         </div>

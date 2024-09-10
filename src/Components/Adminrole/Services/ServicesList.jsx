@@ -69,17 +69,17 @@ function ServicesList() {
     getList();
   };
 
-  
+
   const searchService = async (key) => {
     setSearchKey(key)
-    if(key){
+    if (key) {
       let result = await fetch("http://127.0.0.1:8000/api/searchService/" + key)
       result = await result.json();
       setData(result);
-    }else{
+    } else {
       getList();
     }
-   
+
   }
 
   return (
@@ -146,19 +146,19 @@ function ServicesList() {
                         <p className="font-bold text-[1.3rem]">₹{item.price}.00</p>
                       )}
 
-<div className='flex gap-2 max-w-screen-sm mt-2b'>
-                    <MdDelete onClick={() => deleteOperation(item.id)} className='text-[1.5rem] cursor-pointer text-red-600' />
-                    {editing === item.id ? (
-                      <>
-                        <RiSave3Fill onClick={() => saveDescription(item.id)} className='text-[1.5rem] cursor-pointer text-green-600' />
-                        <button onClick={() => setEditing(null)} className='text-[.8rem] bg-black text-white rounded-md px-2'>
-                          Cancel
-                        </button>
-                      </>
-                    ) : (
-                      <FaEdit onClick={() => startEditing(item)} className='text-[1.5rem] cursor-pointer' />
-                    )}
-                  </div>
+                      <div className='flex gap-2 max-w-screen-sm mt-2b'>
+                        <MdDelete onClick={() => deleteOperation(item.id)} className='text-[1.5rem] cursor-pointer text-red-600' />
+                        {editing === item.id ? (
+                          <>
+                            <RiSave3Fill onClick={() => saveDescription(item.id)} className='text-[1.5rem] cursor-pointer text-green-600' />
+                            <button onClick={() => setEditing(null)} className='text-[.8rem] bg-black text-white rounded-md px-2'>
+                              Cancel
+                            </button>
+                          </>
+                        ) : (
+                          <FaEdit onClick={() => startEditing(item)} className='text-[1.5rem] cursor-pointer' />
+                        )}
+                      </div>
                     </div>
 
 
@@ -166,8 +166,8 @@ function ServicesList() {
                       <img src={"http://127.0.0.1:8000/" + item.file_path} alt="img" className='w-[20rem] h-auto rounded-md mb-4' />
                     </div>
 
-                    
-                  
+
+
 
                   </section>
 

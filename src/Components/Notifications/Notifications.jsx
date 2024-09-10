@@ -1,28 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Notifications() {
+const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
 
     useEffect(() => {
-        fetchNotifications();
+        // Fetch notifications for the logged-in user
+        fetch('http://127.0.0.1:8000/api/notifications/63') // replace '1' with dynamic user ID
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => setNotifications(data))
+            .catch(error => console.log(error));
     }, []);
 
-    const fetchNotifications = async () => {
-        let result = await fetch("http://127.0.0.1:8000/api/notifications");
-        result = await result.json();
-        setNotifications(result);
-    }
+    const markAsRead = (id) => {
+        fetch(`http://127.0.0.1:8000/api/notifications/read/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                // Update state to remove the read notification
+                setNotifications(notifications.filter(n => n.id !== id));
+            })
+            .catch(error => console.log(error));
+    };
 
     return (
-        <div className="p-4">
-            <h2 className="text-xl font-bold mb-4">Notifications</h2>
-            {notifications.map((notification, index) => (
-                <div key={index} className={`p-4 mb-4 text-sm ${notification.data.status === 'accepted' ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}`}>
-                    {notification.data.status === 'accepted' ? 'Booking Confirmed' : 'Booking Rejected'}
-                </div>
-            ))}
+        <div>
+            <h3 className='text-2xl font-bold'>Notifications</h3>
+            <hr />
+            <ul>
+                {notifications.map(notification => (
+                    <li key={notification.id}>
+                        {notification.message}
+                        <button onClick={() => markAsRead(notification.id)}>Mark as Read</button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
-}
+};
 
 export default Notifications;
+

@@ -5,7 +5,7 @@ import { IoSearch } from "react-icons/io5";
 
 import { useLocation } from 'react-router-dom';
 
-function AdminBookingList() {
+function AdminBookingList({ userId }) {
     const [data, setData] = useState([]);
     const [searchKey, setSearchKey] = useState([]);
     const [addresses, setAddresses] = useState({});
@@ -89,6 +89,35 @@ function AdminBookingList() {
             bookingList();
         }
     };
+
+    //Send notifications
+    const sendNotification = () => {
+        const message = "Your booking has been confirmed!";  // Customize your message here
+
+        fetch('http://127.0.0.1:8000/api/notifications', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user_id: userId,
+                message: message,
+            }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Notification sent successfully!');
+        })
+        .catch(error => {
+            console.error('There was an error sending the notification!', error);
+        });
+    };
+
     
 
     return (
@@ -145,8 +174,8 @@ function AdminBookingList() {
 
 
                                         <div className='flex flex-col gap-3'>
-                                            <button className='bg-blue-900 hover:bg-blue-950 text-white p-2 rounded-md' onClick={() => updateBookingStatus(order.id, 'accepted')}>Accept</button>
-                                            <button className='bg-slate-600 hover:bg-slate-700 text-white p-2 rounded-md' onClick={() => updateBookingStatus(order.id, 'rejected')}>Reject</button>
+                                            <button className='bg-blue-900 hover:bg-blue-950 text-white p-2 rounded-md' onClick={sendNotification} >Accept</button>
+                                            <button className='bg-slate-600 hover:bg-slate-700 text-white p-2 rounded-md'>Reject</button>
 
                                         </div>
 
