@@ -7,11 +7,13 @@ import { MdCurrencyRupee } from "react-icons/md";
 
 function Orders() {
   const [data, setData] = useState([]);
+  const [notifications, setNotifications] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     bookingList();
-  }, []); 
+    fetchNotifications();
+  }, []);
 
   const bookingList = async () => {
     let result = await fetch("http://127.0.0.1:8000/api/bookinglist");
@@ -19,8 +21,8 @@ function Orders() {
 
     const formattedData = result.map(order => {
       const createdAt = new Date(order.created_at);
-      const date = createdAt.toLocaleDateString(); 
-      const time = createdAt.toLocaleTimeString(); 
+      const date = createdAt.toLocaleDateString();
+      const time = createdAt.toLocaleTimeString();
 
       return {
         ...order,
@@ -35,8 +37,24 @@ function Orders() {
   const handleBookingClick = (order) => {
     navigate(`/bookingdetails/${order.id}`, { state: order });
   };
+
+
+  // Fetch notifications for the logged-in user
+  const userInfo = JSON.parse(localStorage.getItem('user-info'));
+  if (userInfo) {
+    const userId = userInfo.id;
+    const fetchNotifications = async () => {
+      let result = await fetch(`http://127.0.0.1:8000/api/notifications/${userId}`);
+      result = await result.json();
+      setNotifications(result);
+    };
+
+    fetchNotifications();
   
-  
+  }
+
+
+ 
 
   return (
     <>
@@ -64,18 +82,24 @@ function Orders() {
           {data.map((order) =>
             <div key={order.id} className="grid grid-cols-1 grid-col md:grid-cols-1 lg:grid-cols-1 my-3 bg-white">
 
-                <section onClick={()=>handleBookingClick(order)} className="border flex justify-between border-gray-200 rounded-lg shadow-lg py-4 px-10">
-                  <div className='flex flex-col gap-4'>
-                    <h2 className="font-semibold text-[1.4rem] mb-2">{order.service?.name}</h2>
-                    <p className="font-semibold mb-2">Booking confirmed on {order.formattedDate} at {order.formattedTime}</p>
-                    <p className="font-semibold mb-2 text-[1.2rem] flex"><MdCurrencyRupee className='mt-[.4rem] text-[1.2rem]' />{order.total_price}</p>
-                  </div>
+              <section onClick={() => handleBookingClick(order)} className="border flex justify-between border-gray-200 rounded-lg shadow-lg py-4 px-10">
+                <div className='flex flex-col gap-4'>
+                  <h2 className="font-semibold text-[1.4rem] mb-2">{order.service?.name}</h2>
+                  <p className="font-semibold mb-2">Booking confirmed on {order.formattedDate} at {order.formattedTime}</p>
+                  <p className="font-semibold mb-2 text-[1.2rem] flex"><MdCurrencyRupee className='mt-[.4rem] text-[1.2rem]' />{order.total_price}</p>
 
-                  <div className='border-2 w-[13.5rem]'>
-                    <img src={"http://127.0.0.1:8000/" + order.service?.file_path} alt="img" />
-                  </div>
-                </section>
-  
+                  {/* Check if there's a matching notification */}
+                  {notifications.filter((notif) => notif.order_id === order.id)
+                    .map((notif) => (
+                      <p key={notif.id}>{notif.message}</p>
+                    ))}
+                </div>
+
+                <div className='border-2 w-[13.5rem]'>
+                  <img src={"http://127.0.0.1:8000/" + order.service?.file_path} alt="img" />
+                </div>
+              </section>
+
             </div>
           )}
         </section>
