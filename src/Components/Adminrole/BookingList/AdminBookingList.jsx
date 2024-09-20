@@ -78,7 +78,7 @@ function AdminBookingList() {
     const notification = {
       user_id: order.user_id, // user who made the order
       order_id: order.id,
-      message: `Your order #${order.id} has been accepted.`,
+      message: `Your order ${order.service.name} has been accepted.`,
       status: 'accepted',
     };
 
@@ -90,7 +90,7 @@ function AdminBookingList() {
       body: JSON.stringify(notification),
     });
 
-    alert('Booking accepted and notification sent!');
+    alert('Booking accepted and notification sent');
   };
 
 

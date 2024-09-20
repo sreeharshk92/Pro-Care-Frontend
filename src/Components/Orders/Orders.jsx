@@ -12,7 +12,22 @@ function Orders() {
 
   useEffect(() => {
     bookingList();
+
+    // Fetch notifications for the logged-in user
+  const userInfo = JSON.parse(localStorage.getItem('user-info'));
+  if (userInfo) {
+    const userId = userInfo.id;
+    const fetchNotifications = async () => {
+      let result = await fetch(`http://127.0.0.1:8000/api/notifications/${userId}`);
+      result = await result.json();
+      setNotifications(result);
+    };
+
     fetchNotifications();
+  
+  }
+
+    
   }, []);
 
   const bookingList = async () => {
@@ -39,20 +54,7 @@ function Orders() {
   };
 
 
-  // Fetch notifications for the logged-in user
-  const userInfo = JSON.parse(localStorage.getItem('user-info'));
-  if (userInfo) {
-    const userId = userInfo.id;
-    const fetchNotifications = async () => {
-      let result = await fetch(`http://127.0.0.1:8000/api/notifications/${userId}`);
-      result = await result.json();
-      setNotifications(result);
-    };
-
-    fetchNotifications();
   
-  }
-
 
  
 
@@ -91,7 +93,7 @@ function Orders() {
                   {/* Check if there's a matching notification */}
                   {notifications.filter((notif) => notif.order_id === order.id)
                     .map((notif) => (
-                      <p key={notif.id}>{notif.message}</p>
+                      <p className='text-[#3374de] font-semibold' key={notif.id}>{notif.message}</p>
                     ))}
                 </div>
 

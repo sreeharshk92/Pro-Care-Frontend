@@ -7,21 +7,14 @@ function Home() {
     <>
     <Navbar/>
 
-    <div className='flex h-[42.5rem] p-[5.2rem] bg-[#16325B]'>
-  {/* Left Side */}
-  <div className='flex-1 flex flex-col justify-center pl-10'>
-    <h1 className='text-shadow text-6xl text-white w-[35rem] text-left font-bold'>Easy way to keep your home and office in perfect shape.</h1>
-    <div className='flex flex-col gap-4 w-[20rem] mt-6'>
-      <input type="text" placeholder='🧤Search for a service' className='py-2 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
-      <input type="text" placeholder='📍Search by location' className='py-2 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+    <div className='bg-home-pic bg-center bg-cover h-[42.5rem] flex flex-col justify-center items-center'>
+      <h1 className='text-shadow text-6xl text-white w-[55rem] text-center font-bold'>"Easy way to keep your home and office in perfect shape."</h1>
+      <div className='flex gap-10 mt-6'>
+      <input type="text" placeholder='🧤Search for a service' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      <input type="text" placeholder='📍Search by location' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      </div>  
     </div>
-  </div>
 
-  {/* Right Side */}
-  <div className='flex-1 bg-home-pic bg-center bg-cover h-[28rem]'>
-    {/* This is where your background image will be displayed */}
-  </div>
-</div>
 
 
     <section className="container mx-auto py-12 px-6">

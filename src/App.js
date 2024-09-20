@@ -27,6 +27,7 @@ import Cart from "./Components/Cart/Cart";
 import NotFound from "./Components/Error/ErrorPage";
 import AdminBookingList from "./Components/Adminrole/BookingList/AdminBookingList";
 import Notifications from "./Components/Notifications/Notifications";
+import Chat from "./Components/Chat/Chat";
 
 
 
@@ -41,7 +42,7 @@ function App() {
     <Route path="/" element={<Signup/>}></Route>
     <Route path="/login" element={<Login/>}></Route>
     <Route path="/home" element={<Home/>}></Route>
-
+    <Route path="/Chat" element={<Chat/>}></Route>
     <Route path="/services" element={<Services/>}></Route>
     <Route path="/services/singleservicepage/:id" element={<SingleServicePage/>}></Route>
     <Route path="/services/singleservicepage/bookingsummery/:id" element={<BookingSummery/>}></Route>

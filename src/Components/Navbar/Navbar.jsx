@@ -30,9 +30,13 @@ function Navbar() {
         setOpen(!open);
     };
 
+    const closeNotification = () => {
+        setOpen(false);
+    }
+
 
     return (
-        <nav className='h-24 antialiased sticky top-0 z-50   bg-[#78B7D0] shadow-xl '>
+        <nav className='h-24 antialiased sticky top-0 z-50  bg-white shadow-xl '>
 
             <div className='flex justify-between text-sm font-medium py-3 px-32'>
                 <img src={logo} alt="logo" className='w-44' />
@@ -52,6 +56,9 @@ function Navbar() {
 
                     <li>
                         <Link to='/orders' className='hover:text-blue-900'>Bookings</Link>
+                    </li>
+                    <li>
+                        <Link to='/chat' className='hover:text-blue-900'>Chat</Link>
                     </li>
                 </ul>
 
@@ -89,8 +96,8 @@ function Navbar() {
 
             {open && (
                         <div className="origin-top-right absolute min-h-screen right-0 w-[28rem] top-0  shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="horizontal" aria-labelledby="options-menu">
-                            <div className="p-3" role="none">
-                                <Notifications/>
+                            <div role="none">
+                                <Notifications close={closeNotification}/>
                             </div>
                         </div>
                     )}
