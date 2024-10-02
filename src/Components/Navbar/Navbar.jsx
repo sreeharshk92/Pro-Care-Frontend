@@ -36,7 +36,7 @@ function Navbar() {
 
 
     return (
-        <nav className='h-24 antialiased sticky top-0 z-50  bg-white shadow-xl '>
+        <nav className='h-24 antialiased sticky top-0 z-50 bg-white/20 shadow-lg backdrop-blur-4.5 border border-white/20 rounded-lg '>
 
             <div className='flex justify-between text-sm font-medium py-3 px-32'>
                 <img src={logo} alt="logo" className='w-44' />

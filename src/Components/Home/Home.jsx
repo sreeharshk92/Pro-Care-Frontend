@@ -2,10 +2,15 @@ import React from 'react'
 import homepic from './homepic.jpg'
 import Navbar from '../Navbar/Navbar'
 import OurTeam from '../OurTeam/OurTeam'
+import ChatCircle from '../ChatBot/ChatCircle'
 function Home() {
   return (
     <>
     <Navbar/>
+    <ChatCircle />
+    
+
+
 
     <div className='bg-home-pic bg-center bg-cover h-[42.5rem] flex flex-col justify-center items-center'>
       <h1 className='text-shadow text-6xl text-white w-[55rem] text-center font-bold'>"Easy way to keep your home and office in perfect shape."</h1>

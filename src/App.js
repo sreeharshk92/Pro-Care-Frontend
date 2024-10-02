@@ -28,6 +28,7 @@ import NotFound from "./Components/Error/ErrorPage";
 import AdminBookingList from "./Components/Adminrole/BookingList/AdminBookingList";
 import Notifications from "./Components/Notifications/Notifications";
 import Chat from "./Components/Chat/Chat";
+import ChatCircle from "./Components/ChatBot/ChatCircle";
 
 
 
@@ -57,6 +58,14 @@ function App() {
 
    
     <Route path="/notifications" element={<Notifications/>}></Route>
+    <Route path="/chatcircle" element={<ChatCircle/>}></Route>
+
+
+
+
+    
+
+
 
 
     <Route path="/adminhome" element={<Adminhome/>}></Route>
