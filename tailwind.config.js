@@ -2,11 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{jsx,js}",],
   theme: {
-    extend: {backgroundImage: { 'home-pic': "url('Components/Home/homepic.jpg')",},
-    backdropBlur: {
-      '4.5': '4.5px', // Custom blur size
-    },        
-  },
+    extend: {
+      backgroundImage: { 'home-pic': "url('Components/Home/homepic.jpg')", },
+      backdropBlur: { '4.5': '4.5px', },
+      screens: { 'custom':'1123px', },
+    },
   },
   plugins: [
     function ({ addUtilities }) {

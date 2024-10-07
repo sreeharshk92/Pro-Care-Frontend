@@ -126,19 +126,19 @@ function Login() {
             <h1 className='text-center text-3xl font-semibold mt-16'>Log In</h1>
 
             <label className='mt-4 mb-2 font-medium'>Email</label>
-            <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className='py-1 px-3 border rounded-[5px] hover:border-black ' />
+            <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className='py-1 px-2 border rounded-[5px] hover:border-black focus:outline-none' />
             {errors.email && <small className='text-red-500'>{errors.email[0]}</small>}
 
             {errors.backend && <small className='text-red-500 mt-3'>{errors.backend}</small>}
 
             <label className='mt-3 mb-2 font-medium'>Password</label>
-            <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} className='py-1 px-3  border rounded-[5px] hover:border-black' />
+            <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} className='py-1 px-2  border rounded-[5px] hover:border-black focus:outline-none' />
             {errors.password && <small className='text-red-500'>{errors.password[0]}</small>}
 
             <p className='mt-1 text-center hover:underline cursor-pointer text-[14px] text-slate-500'>Forgot password?</p>
 
             <label className='mb-2 font-medium'>Role</label>
-            <select value={role} onChange={(e) => setRole(e.target.value)} className='py-1 px-3 border rounded-[5px] hover:border-black'>
+            <select  value={role} onChange={(e) => setRole(e.target.value)} className='py-1 px-2 border rounded-[5px] hover:border-black focus:outline-none'>
               <option value=''>Select a role</option>
               <option value='user'>User</option>
               <option value='admin'>Admin</option>
@@ -147,7 +147,7 @@ function Login() {
             {errors.role && <small className='text-red-500'>{errors.role}</small>}
 
 
-            <button className='border rounded-md py-2 px-[5.6rem] mr-8 ml-8 mt-4 font-medium bg-blue-950 hover:bg-slate-800 text-white hover:transition duration-300 ease-linear' type='submit'>Log In</button>
+            <button className='border rounded-md py-2 px-[5.6rem] mr-8 ml-8 mt-4 font-bold bg-blue-950 hover:bg-slate-800 text-white hover:transition duration-300 ease-linear' type='submit'>Log In</button>
 
             <p className='text-center mt-5 text-[14px] text-slate-500 '>Don't have an account?<Link to='/' className='hover:underline text-blue-800 '>Create new</Link></p>
 
