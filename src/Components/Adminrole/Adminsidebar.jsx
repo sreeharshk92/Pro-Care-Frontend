@@ -13,8 +13,8 @@ function Adminsidebar() {
     return (
    
         
-            <div className="bg-gray-800 text-white w-64 min-h-screen flex flex-col">
-                <div className="p-4 text-xl font-bold">Admin Dashboard</div>
+            <div className="bg-gray-900 text-white w-64 min-h-screen flex flex-col">
+                <div className="p-4 text-3xl font-bold">Pro Care</div>
                 <nav className="flex flex-col mt-4">
                     <Link to='/Adminhome'className="px-4 py-2 hover:bg-gray-700">Dashboard</Link>
                     <Link to='/AdminUsers'className="px-4 py-2 hover:bg-gray-700">Users</Link>

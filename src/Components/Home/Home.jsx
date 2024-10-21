@@ -3,6 +3,7 @@ import homepic from './homepic.jpg'
 import Navbar from '../Navbar/Navbar'
 import OurTeam from '../OurTeam/OurTeam'
 import UserChat from '../ChatBot/UserChat'
+import './Home.css'
 function Home() {
   return (
     <>
@@ -23,7 +24,7 @@ function Home() {
 
 
     <section className="container mx-auto py-12 px-6">
-        <h2 className="text-3xl font-semibold text-center mb-8">Popular Services</h2>
+        <h2 className="subtitle text-3xl font-bold text-center mb-8">Featured Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg shadow-md p-6">
                 <img className="h-40 w-full object-cover rounded-t-md" src="featured-service-1.jpg" alt="Featured Service 1"/>

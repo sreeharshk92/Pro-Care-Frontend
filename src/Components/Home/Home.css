@@ -1,12 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
 
-.title{
+.sutitle{
 
-    font-weight: 900;
-    font-size: 4em;
-    color: #2a3960;
-}
-
-nav{
     font-family: "Montserrat",sans-serif;
+    font-weight: 900;
 }
