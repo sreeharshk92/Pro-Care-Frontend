@@ -5,10 +5,10 @@ import Adminheader from './Adminheader'
 function Admindashboard() {
   return (
     <>
-      <div className="flex">
+    
         <Adminsidebar />
-        <div className="flex-1 flex flex-col">
-          <Adminheader />
+        <Adminheader />
+        <div>
           <main className="flex-1 bg-gray-100 p-4">
             <div className="p-4">
               <h2 className="text-2xl font-bold mb-4">Welcome to the Dashboard</h2>
@@ -20,7 +20,6 @@ function Admindashboard() {
             </div>
           </main>
         </div>
-      </div>
 
     </>
   )

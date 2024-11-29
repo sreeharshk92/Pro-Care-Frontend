@@ -40,7 +40,7 @@ function AddService() {
         <Adminsidebar />
         <div className="flex-1 flex flex-col ">
           <Adminheader />
-          <main className="min-h-screen items-center flex justify-center">
+          <main className="h-screen items-center flex justify-center">
 
             <form onSubmit={handleAddService} className='border border-black rounded-md max-w-screen'>
 

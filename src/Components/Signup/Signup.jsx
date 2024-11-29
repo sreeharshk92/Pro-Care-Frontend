@@ -38,15 +38,15 @@ function Signup() {
       else if (response.status === 201) {
         if (role === 'user') {
           localStorage.setItem("user-info", JSON.stringify(data));
-          navigate("/Home");
+          navigate("/home");
         }
         else if (role === 'admin') {
           localStorage.setItem("admin-info", JSON.stringify(data));
-          navigate("/Adminhome");
+          navigate("/dashboard");
         }
         else if (role === 'superadmin') {
           localStorage.setItem("superadmin-info", JSON.stringify(data));
-          navigate("/Superadminhome");
+          navigate("/superadminhome");
         }
       }
     });

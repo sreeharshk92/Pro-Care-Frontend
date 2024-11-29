@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {IoSearch  } from "react-icons/io5";
 import banner from './banner.png'
-function ServicesBanner({ setSearchResults}) {
+function ServicesBanner({ setSearchResults }) {
 
   const [data,setData] = useState([]);
 

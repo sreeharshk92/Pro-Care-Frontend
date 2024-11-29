@@ -1,5 +1,4 @@
 import React from 'react'
-import homepic from './homepic.jpg'
 import Navbar from '../Navbar/Navbar'
 import OurTeam from '../OurTeam/OurTeam'
 import UserChat from '../ChatBot/UserChat'
@@ -16,8 +15,8 @@ function Home() {
     <div className='bg-home-pic bg-center bg-cover h-[42.5rem] flex flex-col justify-center items-center'>
       <h1 className='text-shadow text-6xl text-white w-[55rem] text-center font-bold'>"Easy way to keep your home and office in perfect shape."</h1>
       <div className='flex gap-10 mt-6'>
-      <input type="text" placeholder='🧤Search for a service' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
-      <input type="text" placeholder='📍Search by location' className='py-1 px-4 border border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      <input type="text" placeholder='🧤Search for a service' className='py-1 px-4 border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
+      <input type="text" placeholder='📍Search by location' className='py-1 px-4 border-2 rounded-md placeholder:text-black hover:border-black focus:border-blue-500 focus:outline-none'/>
       </div>  
     </div>
 

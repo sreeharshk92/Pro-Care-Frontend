@@ -40,9 +40,9 @@ function Navbar() {
 
     return (
         <nav className="antialiased sticky top-0 z-50 bg-white shadow-2xl ">
-            <div className="flex justify-between items-center py-3  text-sm font-medium   custom:px-20">
-                <h1 className='title'>Pro Care</h1>
-                {/* <img src={logo} alt="logo" className="w-32 custom:w-44" /> */}
+            <div className="flex justify-between items-center py-3  text-sm    custom:px-20">
+                {/* <h1 className='title'>Pro Care</h1> */}
+                <img src={logo} alt="logo" className="w-32 custom:w-44" />
                 
                 <div className="custom:hidden flex items-center">
                     <button onClick={toggleMenu}>
