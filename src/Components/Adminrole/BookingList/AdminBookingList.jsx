@@ -73,7 +73,7 @@ function AdminBookingList() {
         }
     };
 
-     // Function to handle booking acceptance
+    // Function to handle booking acceptance
   const handleAcceptBooking = async (order) => {
     const notification = {
       user_id: order.user_id, // user who made the order

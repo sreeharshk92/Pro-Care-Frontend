@@ -43,11 +43,11 @@ function Adminsidebar() {
                     <Link to='/dashboard'className="side-links"><HiOutlineHome className='side-icons-1' />Dashboard</Link>
                     <Link to='/dashboard/users'className="side-links"><SlPeople className='side-icons' />Users</Link>
                     <Link to='/dashboard/services' className="side-links"><GiVacuumCleaner className='side-icons-3' />Services</Link>
-                    <Link to='/dashboard/bookings' className="side-links"><BsCalendarCheck className='side-icons' />Booking List</Link>
+                    <Link to='/dashboard/bookings' className="side-links"><BsCalendarCheck className='side-icons' />Bookings</Link>
 
                     <Link to='/dashboard/addservice' className="side-links"><IoMdAdd className='side-icons' />Add Service</Link>
-                    <a href="/dashboard/settings" className="side-links"><IoSettingsOutline className='side-icons' />Settings</a>
-                    <a href="/dashboard/logout" className="side-links" onClick={logOut}><BiLogOut className='side-icons' />Log Out</a>
+                    <a href="/settings" className="side-links"><IoSettingsOutline className='side-icons' />Settings</a>
+                    <a href="/logout" className="side-links" onClick={logOut}><BiLogOut className='side-icons' />Log Out</a>
                 </div>
             </div>
 

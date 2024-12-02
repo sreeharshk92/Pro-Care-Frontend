@@ -73,10 +73,10 @@ function App() {
 
     <Route path="/dashboard" element={<Adminhome/>}></Route>
     <Route path="/dashboard/users" element={<AdminUsers/>}></Route>
-    <Route path="/dashboard/adduser" element={<AddUser/>}></Route>
+    <Route path="/adduser" element={<AddUser/>}></Route>
     <Route path="/dashboard/services" element={<ServicesList/>}></Route>
-    <Route path="/dashboard/addService" element={<AddService/>}></Route>
-    <Route path="/dashboard/adminbookings" element={<AdminBookingList/>}></Route>
+    <Route path="/dashboard/addservice" element={<AddService/>}></Route>
+    <Route path="/dashboard/bookings" element={<AdminBookingList/>}></Route>
 
 
     <Route path="/superadminhome" element={<SuperAdminHome/>}></Route>

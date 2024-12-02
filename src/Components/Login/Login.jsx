@@ -42,7 +42,7 @@ function Login() {
         }
         else if (role === 'admin') {
           localStorage.setItem("admin-info", JSON.stringify(data));
-          navigate("/Adminhome");
+          navigate("/dashboard");
         }
         else if (role === 'superadmin') {
           localStorage.setItem("superadmin-info", JSON.stringify(data));
